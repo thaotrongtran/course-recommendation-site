@@ -1,18 +1,20 @@
-<h1>Listing articles</h1>
- <%= link_to 'New article', new_article_path %>
+<h1>Listing reviews</h1>
+ <%= link_to 'New review', new_article_path %>
 <table>
   <tr>
-    <th>Title</th>
-    <th>Text</th>
+    <th>ITSC 3181</th>
+    <th>Computer Architecture</th>
   </tr>
  
-  <% @articles.each do |article| %>
+  <% @reviews.each do |review| %>
     <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= review.evaluation %></td>
+      <td><%= review.professor_rating %></td>
+      <td><%= review.workload_rating %></td>
+      <td><%= review.support_rating %></td>
+      <td><%= link_to 'Show', review_path(review) %></td>
+      <td><%= link_to 'Edit', edit_review_path(review) %></td>
+      <td><%= link_to 'Destroy', review_path(review), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
