@@ -52,5 +52,5 @@ end
 #For whitelisting
 private
     def review_params
-        params.require(:review).permit(:title,:text)
+        params.require(:review).permit(:course_name, :professor, :evaluation, :professor_rating, :workload_rating, :support_rating)
     end
