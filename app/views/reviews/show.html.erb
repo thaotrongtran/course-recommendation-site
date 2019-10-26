@@ -1,9 +1,13 @@
 <p>
-    <strong>Title:</strong>
-    <%= @article.title %>
+    <strong>Course Name:</strong>
+        <%= @review.course_name %>
 </p>
 <p>
-    <strong>Text:</strong>
-    <%= @article.text %>
+    <strong>Professor:</strong>
+        <%= @review.professor %>
 </p>
-<%= link_to 'Article List', articles_path %>
+<p>
+    <strong>Evaluation:</strong>
+        <%= @review.evaluation %>
+</p>
+<%= link_to 'Review List', reviews_path %>

@@ -15,10 +15,10 @@ class ReviewsController < ApplicationController
     
     #To create artiles and save
     def create
-        @review = Review.new(article_params)
+        @review = Review.new(review_params)
         
         #Adding validation redirection
-        if @article.save
+        if @review.save
             redirect_to @review
         else
             render 'new'
