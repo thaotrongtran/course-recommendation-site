@@ -2,10 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 h1 {
-  color: blue;
+  color: #74BE41;
   font-size: 32px;
 }
 
-body{
-  background: #85FF9E;
+container{
+  background-color: #d7cdcc;
+}
+
+
+//Borrowed a search bar from this site https://jsfiddle.net/bootstrapious/za9dtgme
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-control-underlined {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  padding-left: 0;
 }

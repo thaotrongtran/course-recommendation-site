@@ -1,3 +1,33 @@
-<h1>Rate my course</h1>
-<%= link_to 'View all reviews', controller: 'reviews' %>
+
+<div class = "container">
+    <h1>Rate my course</h1>
+    <%= link_to 'View all reviews', controller: 'reviews' %>
+
+<!-- Search box was borrowed from here, not our own https://bootstrapious.com/p/bootstrap-search-bar -->
+
+  <div class="row mb-5">
+    <div class="col-lg-8 mx-auto">
+      <h5 class="font-weight-light mb-4 font-italic text-white">Custom rounded search bars with input group</h5>
+      <div class="bg-white p-5 rounded shadow">
+
+        <!-- Custom rounded search bars with input group -->
+        <form action="">
+          <div class="input-group mb-4 border rounded-pill p-1">
+            <input type="search" placeholder="What course do you want to search for?" aria-describedby="button-addon3" class="form-control bg-none border-0">
+            <div class="input-group-append border-0">
+              <button id="button-addon3" type="button" class="btn btn-link text-success"><i class="fa fa-search"></i>Search</button>
+            </div>
+          </div>
+        </form>
+        <!-- End -->
+
+      </div>
+    </div>
+  </div>
+  <div class = "text-center">
+      <button type="button" class="btn btn-outline-success">Submit a review</button>
+
+  </div>
+
+</div>
 
