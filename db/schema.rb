@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_10_24_180443) do
 
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.string "course_name"
     t.string "professor"
