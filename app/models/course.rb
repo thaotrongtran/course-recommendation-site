@@ -1,4 +1,4 @@
 class Course < ApplicationRecord
-  belongs_to :review
-  belongs_to :professor
+  has_many :reviews
+  has_many :professors
 end
