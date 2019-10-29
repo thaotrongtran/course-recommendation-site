@@ -6,23 +6,40 @@ input[type=text]{
     padding: 12px 12px;
     border: 2px solid #ccc;
     background-color: #f8f8f8;
+    position: relative;
+    left: 2%;
+}
+
+// position number_field
+input[type=number]{
+    position: relative;
+    left: 2%;
 }
 
 textarea{
-    width: 100%;
+    width: 75%;
     height: 300px;
     padding: 12px 12px;
     border: 2px solid #ccc;
     background-color: #f8f8f8;
     resize: none;
+    position: relative;
+    left: 2%;
 }
 
 input[type=button], input[type=submit]{
     background-color: #4CAF50;
-    float: right;
+    //float: right;
     border: none;
     color: white;
     padding: 16px 20px;
     text-decoration: none;
     cursor: pointer;
+    position: relative;
+    left: 2%;
+}
+
+label{
+    position: relative;
+    left: 2%;
 }
