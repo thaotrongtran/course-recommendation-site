@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   get 'welcome/index'
   
+  resources :courses do
+    resources :reviews
+  end
+  
+  resources :professors do
+    resources :reviews
+  end
+  
   resources :reviews
   
   root 'welcome#index'
