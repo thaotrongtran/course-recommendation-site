@@ -10,7 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_24_180443) do
+ActiveRecord::Schema.define(version: 2019_10_29_165840) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "course_name"
+    t.integer "course_id"
+    t.integer "review_id"
+    t.integer "professor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["professor_id"], name: "index_courses_on_professor_id"
+    t.index ["review_id"], name: "index_courses_on_review_id"
+  end
+
+  create_table "professors", force: :cascade do |t|
+    t.string "prof_name"
+    t.integer "prof_id"
+    t.integer "review_id"
+    t.integer "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_professors_on_course_id"
+    t.index ["review_id"], name: "index_professors_on_review_id"
+  end
 
   create_table "reviews", force: :cascade do |t|
     t.string "course_name"
