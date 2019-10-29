@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
-    has_one :course
-    has_one :professor
+    belongs_to :course
+    belongs_to :professor
     validates :course_id, presence: true, length: {minimum: 1}
     validates :prof_id, presence: true, length: {minimum: 1}
     validates :evaluation, presence: true, length: {minimum: 10}

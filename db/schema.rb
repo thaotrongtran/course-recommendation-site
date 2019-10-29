@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_29_172458) do
+ActiveRecord::Schema.define(version: 2019_10_29_165840) do
 
   create_table "courses", force: :cascade do |t|
     t.string "course_name"
@@ -27,14 +27,16 @@ ActiveRecord::Schema.define(version: 2019_10_29_172458) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "prof_id"
     t.text "evaluation"
     t.integer "prof_rating"
     t.integer "workload_rating"
     t.integer "support_rating"
+    t.integer "professor_id"
+    t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_reviews_on_course_id"
+    t.index ["professor_id"], name: "index_reviews_on_professor_id"
   end
 
 end
