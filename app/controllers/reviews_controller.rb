@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
         @review = Review.find(params[:id])
     end
     
-    #To create artiles and save
+    #To create review and save
     def create
         @review = Review.new(review_params)
         
@@ -52,5 +52,5 @@ end
 #For whitelisting
 private
     def review_params
-        params.require(:review).permit(:course_name, :professor, :evaluation, :professor_rating, :workload_rating, :support_rating)
+        params.require(:review).permit(:evaluation,:prof_rating,:workload_rating,:support_rating,:professor_id,:course_id)
     end
