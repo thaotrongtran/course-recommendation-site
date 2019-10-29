@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_10_29_165840) do
 
   create_table "articles", force: :cascade do |t|
@@ -40,12 +41,29 @@ ActiveRecord::Schema.define(version: 2019_10_29_165840) do
     t.index ["course_id"], name: "index_professors_on_course_id"
     t.index ["review_id"], name: "index_professors_on_review_id"
   end
+=======
+ActiveRecord::Schema.define(version: 2019_10_29_172458) do
+>>>>>>> 2c17a0b
+
+  create_table "courses", force: :cascade do |t|
+    t.string "course_name"
+    t.integer "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "professors", force: :cascade do |t|
+    t.string "prof_name"
+    t.integer "prof_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "course_name"
-    t.string "professor"
+    t.integer "course_id"
+    t.integer "prof_id"
     t.text "evaluation"
-    t.integer "professor_rating"
+    t.integer "prof_rating"
     t.integer "workload_rating"
     t.integer "support_rating"
     t.datetime "created_at", null: false
