@@ -1,0 +1,8 @@
+<h1>Listing courses</h1>
+<table>
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= course.course_name %></td>
+    </tr>
+  <% end %>
+</table>
