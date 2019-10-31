@@ -2,6 +2,8 @@
 <div class = "container">
     <h1>Rate my course</h1>
     <%= link_to 'View all reviews for a course', controller: 'courses' %>
+    <%= link_to 'View all reviews for a course', controller: 'professors' %>
+
 
 <!-- Search box was borrowed from here, not our own https://bootstrapious.com/p/bootstrap-search-bar -->
 
@@ -25,7 +27,9 @@
     </div>
   </div>
   <div class = "text-center">
-      <button type="button" class="btn btn-outline-success">Submit a review</button>
+      <!-- <button type="button" class="btn btn-outline-success">Submit a review</button>-->
+      <%= link_to 'Submit a review', controller: 'reviews' %>
+
 
   </div>
 

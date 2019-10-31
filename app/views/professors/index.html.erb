@@ -1,0 +1,9 @@
+<h1>Listing professors</h1>
+ <%= link_to 'Adding new professor', new_professor_path %>
+<table>
+  <% @professors.each do |professor| %>
+    <tr>
+      <td><%= professor.prof_name %></td>
+    </tr>
+  <% end %>
+</table>
