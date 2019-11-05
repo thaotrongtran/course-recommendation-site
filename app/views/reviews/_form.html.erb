@@ -16,24 +16,19 @@
  
   <p>
     <% Course.all.each do |course| %>
-        <%= course.course_name %><br>
+        <%= f.label course.course_name %><br>
     <% end %>
     
-    
-    
-    <%= f.label :course_id %><br>
-    <%= f.text_field :course_id %><br>
+    <%= f.label Course.find_by(course_name: "Computer Architecture").id %><br>
     
   </p>
 
   <p>
     <% Professor.all.each do |prof| %>
-        <%= prof.prof_name %><br>
+        <%= f.label prof.prof_name %><br>
     <% end %>
-    
-    
-    <%= f.label :professor_id %><br>
-    <%= f.text_field :professor_id %><br>
+  
+    <%= f.text_field :professor %><br>
   </p>
  
   <p>
