@@ -23,6 +23,7 @@
     
     <%= f.label :course_id %><br>
     <%= f.text_field :course_id %><br>
+    <%= f.collection_select(:course_id, Course.all, :id, :course_name ) %>
     
   </p>
 
@@ -34,6 +35,7 @@
     
     <%= f.label :professor_id %><br>
     <%= f.text_field :professor_id %><br>
+    <%= f.collection_select(:professor_id, Professor.all, :id, :prof_name ) %>
   </p>
  
   <p>
