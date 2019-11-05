@@ -3,8 +3,8 @@
 <table>
   <% @reviews.each do |review| %>
     <tr>
-      <td><%= review.course_id %></td>
-      <td><%= review.professor_id %></td>
+      <td><%= Course.find(review.course_id).course_name %></td>
+      <td><%= Professor.find(review.professor_id).prof_name %></td>
       <td><%= review.workload_rating %></td>
       <td><%= review.support_rating %></td>
       <td><%= link_to 'Show', review_path(review) %></td>

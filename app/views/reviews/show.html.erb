@@ -1,10 +1,10 @@
 <p>
     <strong>Course Name:</strong>
-        <%= @review.course_id %>
+        <%= Course.find(@review.course_id).course_name %>
 </p>
 <p>
     <strong>Professor:</strong>
-        <%= @review.professor_id %>
+        <%= Professor.find(@review.professor_id).prof_name %>
 </p>
 <p>
     <strong>Evaluation:</strong>
