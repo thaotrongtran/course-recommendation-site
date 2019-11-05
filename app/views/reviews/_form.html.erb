@@ -21,14 +21,21 @@
     
     <%= f.label Course.find_by(course_name: "Computer Architecture").id %><br>
     
+    
+    <%= f.label :course_id %><br>
+    <%= f.text_field :course_id %><br>
+    <%= f.collection_select(:course_id, Course.all, :id, :course_name ) %>
+
   </p>
 
   <p>
     <% Professor.all.each do |prof| %>
         <%= f.label prof.prof_name %><br>
     <% end %>
-  
-    <%= f.text_field :professor %><br>
+
+    <%= f.label :professor_id %><br>
+    <%= f.text_field :professor_id %><br>
+    <%= f.collection_select(:professor_id, Professor.all, :id, :prof_name ) %>
   </p>
  
   <p>
