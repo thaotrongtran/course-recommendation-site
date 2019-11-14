@@ -7,15 +7,24 @@
     <br>
     <%= link_to 'View all reviews', controller: 'reviews' %>
 
-
+<%= form_tag(search_page_path, :method => "get",   
+    class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+    <div class="input-group-btn">  
+      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+    </div>  
+  </div>  
+<% end %>
 <!-- Search box was borrowed from here, not our own https://bootstrapious.com/p/bootstrap-search-bar -->
-
+<!--
   <div class="row mb-5">
     <div class="col-lg-8 mx-auto">
       <h5 class="font-weight-light mb-4 font-italic text-white">Custom rounded search bars with input group</h5>
       <div class="bg-white p-5 rounded shadow">
-
+-->
         <!-- Custom rounded search bars with input group -->
+<!--
         <form action="">
           <div class="input-group mb-4 border rounded-pill p-1">
               <input type="search" placeholder="What course do you want to search for?" aria-describedby="button-addon3" class="form-control bg-none border-0">
@@ -24,9 +33,7 @@
               </div>
           </div>
         </form>
-        <!-- End -->
-        <div><%= @results %></div>
-
+-->
       </div>
     </div>
   </div>
