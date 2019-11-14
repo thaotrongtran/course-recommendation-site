@@ -3,7 +3,9 @@
 <table>
   <% @courses.each do |course| %>
     <tr>
-      <td><%= course.course_name %></td>
+      <td><%= course.course_name %>
+      <%= link_to 'View', course_path(course) %>
+      </td>
     </tr>
   <% end %>
 </table>

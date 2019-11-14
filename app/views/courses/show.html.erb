@@ -3,5 +3,8 @@
         <%= @course.course_name %>
         
 </p>
-<p>
+<h2>Comments</h2>
+<%= render @course.calculations %>
+
+
 <%= link_to 'Back to all courses', courses_path %>
