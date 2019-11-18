@@ -8,5 +8,5 @@ Scenario: As a student I want to be able to navigate from the homepage to the ne
   Given I am on the homepage
   When I click on the "Create a new review" link
   Then I should be on the "New Course Review" page
-  And  I should see "evaluation" field
+  And  I should see "Evaluation" field
   
