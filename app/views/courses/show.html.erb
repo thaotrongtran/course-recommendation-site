@@ -58,14 +58,15 @@
 <p>
         <br>
         <br>
-        <strong>Analytics</strong>
         
-        <table>    
-<div class="container">
-      <div class="row">
-          <div class="col-3">
-            <strong>Average professor rating</strong>
-          </div>
+<strong>Analytics</strong>
+        
+<table>    
+        <div class="container">
+              <div class="row">
+                  <div class="col-3">
+                    <strong>Average professor rating</strong>
+                  </div>
           <div class="col-3">
             <strong>Average workload rating</strong>
           </div>
@@ -76,20 +77,19 @@
        
        <div class="row">
           <div class="col-3">
-        <%= @course.reviews.average(:prof_rating) %>
+                <%= number_with_precision(@course.reviews.average(:prof_rating), precision: 2) %>
+
           </div>
-          <div class="col-3">
-                    <%= @course.reviews.average(:support_rating) %>
+         <div class="col-3">
+                <%= number_with_precision(@course.reviews.average(:support_rating), precision: 2) %>
 
           </div>
           <div class="col-3">
-                                <%= @course.reviews.average(:workload_rating) %>
+                <%= number_with_precision(@course.reviews.average(:workload_rating), precision: 2) %>
+
 
           </div>
-       
     </div>
-    
- 
     </div>
     </table>
         
