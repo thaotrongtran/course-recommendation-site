@@ -1,23 +1,36 @@
 <h2>Listing reviews</h2>
 <table>
+  <div class="container">
+      <div class="row">
+          <div class="col-3">
+            Course
+          </div>
+          <div class="col-2">
+            Professor
+          </div>
+          <div class="col-1">
+            Workload rating
+          </div>
+          <div class="col-1">
+            Review rating
+          </div>
+          
+          <div class="col-3">
+            Action
+          </div>
+       </div>
+    </div>
+  
+  
   <% @reviews.each do |review| %>
-    <tr>
-      <td></td>
-      <td></td>
-    
-    </tr>
-    
     <div class="container">
       <div class="row">
           <div class="col-3">
             <%= Course.find(review.course_id).course_name %>
+            <%= link_to 'View', review_path(review) %>
           </div>
-          <div class="col-1">
+          <div class="col-2">
             <%= Professor.find(review.professor_id).prof_name %>
-
-          </div>
-          <div class="col-3">
-              <%= review.evaluation %>
           </div>
           <div class="col-1">
             <%= review.workload_rating %>
@@ -26,8 +39,7 @@
             <%= review.support_rating %>
           </div>
           
-          <div class="col">
-            <%= link_to 'Show', review_path(review) %>
+          <div class="col-3">
             <%= link_to 'Edit', edit_review_path(review) %>
             <%= link_to 'Destroy', review_path(review), method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>

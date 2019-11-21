@@ -1,7 +1,101 @@
 <p>
         <strong>Course name</strong>
         <%= @course.course_name %>
-        
-</p>
+</p>  
+<table>    
+<div class="container">
+      <div class="row">
+          <div class="col-5">
+            <strong>Review</strong>
+          </div>
+          <div class="col-1">
+            <strong>Professor</strong>
+          </div>
+          <div class="col-1">
+            <strong>Professor rating</strong>
+          </div>
+          <div class="col-1">
+            <strong>Workload rating</strong>
+          </div>
+          <div class="col-1">
+            <strong>Support rating</strong>
+          </div>
+          
+          <div class="col-1">
+            <strong>Action</strong>
+          </div>
+       </div>
+    </div>
+
+
+        <% @course.reviews.each do |review| %>
+    <div class="container">
+      <div class="row">
+          <div class="col-5">
+            <%= review.evaluation %>
+          </div>
+          <div class="col-1">
+            <%= Professor.find(review.professor_id).prof_name %>
+          </div>
+          <div class="col-1">
+            <%= review.prof_rating %>
+          </div>
+          <div class="col-1">
+            <%= review.workload_rating %>
+          </div>
+          <div class="col-1">
+            <%= review.support_rating %>
+          </div>
+          
+          <div class="col-2">
+            <%= link_to 'Edit', edit_review_path(review) %>
+            <%= link_to 'Destroy', review_path(review), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+       </div>
+    </div>
+    <% end %>
+</table>  
 <p>
+        <br>
+        <br>
+        <strong>Analytics</strong>
+        
+        <table>    
+<div class="container">
+      <div class="row">
+          <div class="col-3">
+            <strong>Average professor rating</strong>
+          </div>
+          <div class="col-3">
+            <strong>Average workload rating</strong>
+          </div>
+          <div class="col-3">
+            <strong>Average support rating</strong>
+          </div>
+       </div>
+       
+       <div class="row">
+          <div class="col-3">
+        <%= @course.reviews.average(:prof_rating) %>
+          </div>
+          <div class="col-3">
+                    <%= @course.reviews.average(:support_rating) %>
+
+          </div>
+          <div class="col-3">
+                                <%= @course.reviews.average(:workload_rating) %>
+
+          </div>
+       
+    </div>
+    
+ 
+    </div>
+    </table>
+        
+
+
+</p>
+
+
 <%= link_to 'Back to all courses', courses_path %>
