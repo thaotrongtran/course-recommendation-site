@@ -26,11 +26,21 @@ class CoursesController < ApplicationController
         @course = Course.find(params[:id])
     end
   
+    def search  
+      if params[:search].blank?  
+        redirect_to(root_path, alert: "Empty field!") and return  
+      else  
+        @course = params[:search].downcase 
+        @results = Course.all.where("lower(course_name) LIKE :search", search: "%#{@course}%")
+        #render :json => @results
+      end  
+    end
+    
 end
 
 
 #For whitelisting
 private
     def course_params
-        params.require(:course).permit(:course_name)
+        params.require(:course).permit(:course_name, :search)
     end
