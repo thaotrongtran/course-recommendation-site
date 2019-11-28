@@ -3,34 +3,38 @@
   <div class="container">
       <div class="row">
           <div class="col-3">
-            Course
+            <strong>Course</strong>
           </div>
           <div class="col-2">
-            Professor
+            <strong>Professor</strong>
           </div>
           <div class="col-1">
-            Workload rating
+            <strong>Professor rating</strong>
           </div>
           <div class="col-1">
-            Review rating
+            <strong>Workload rating</strong>
+          </div>
+          <div class="col-1">
+            <strong>Support rating</strong>
           </div>
           
-          <div class="col-3">
-            Action
+          <div class="col-1">
+            <strong>Action</strong>
           </div>
        </div>
     </div>
-  
-  
   <% @reviews.each do |review| %>
     <div class="container">
       <div class="row">
           <div class="col-3">
-            <%= Course.find(review.course_id).course_name %>
-            <%= link_to 'View', review_path(review) %>
+          <%= link_to Course.find(review.course_id).course_name, course_path(Course.find(review.course_id)) %>
           </div>
           <div class="col-2">
-            <%= Professor.find(review.professor_id).prof_name %>
+            <%= link_to Professor.find(review.professor_id).prof_name, professor_path(Professor.find(review.professor_id)) %>
+
+          </div>
+          <div class="col-1">
+            <%= review.prof_rating %>
           </div>
           <div class="col-1">
             <%= review.workload_rating %>
@@ -40,12 +44,12 @@
           </div>
           
           <div class="col-3">
+            <%= link_to 'View', review_path(review) %>
             <%= link_to 'Edit', edit_review_path(review) %>
             <%= link_to 'Destroy', review_path(review), method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
        </div>
     </div>
-</div>
     
     
   <% end %>

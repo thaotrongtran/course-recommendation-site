@@ -1,9 +1,12 @@
 <h2>Listing professors</h2>
- <%= link_to 'Adding new professor', new_professor_path %>
 <table>
   <% @professors.each do |professor| %>
+    <p>
     <tr>
-      <td><%= professor.prof_name %></td>
+      <%= link_to professor.prof_name, course_path(professor) %>
     </tr>
+    </p>
   <% end %>
 </table>
+
+<button type="button" class="btn btn-light"><%= link_to 'Add new professor', new_professor_path %></button>

@@ -1,11 +1,13 @@
 <h2>Listing courses</h2>
- <%= link_to 'Create new course', new_course_path %>
 <table>
   <% @courses.each do |course| %>
+    <p>
     <tr>
-      <td><%= course.course_name %>
-      <%= link_to 'View', course_path(course) %>
-      </td>
+      <%= link_to course.course_name, course_path(course) %>
     </tr>
+    </p>
   <% end %>
 </table>
+<br>
+<button type="button" class="btn btn-light"><%= link_to 'Add new course', new_course_path %></button>
+
