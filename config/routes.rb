@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   # view for welcome page
   get 'welcome/index'
-  # view for search results
-  #get '/search' => 'courses#search', :as => 'search-page'
-  get '/course' => 'courses#search'
+  get '/search' => 'courses#search'
 
   resources :courses do
     resources :reviews

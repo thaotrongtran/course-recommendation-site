@@ -26,14 +26,14 @@ class CoursesController < ApplicationController
         @course = Course.find(params[:id])
     end
   
-    def search  
+    def search
       if params[:search].blank?  
         redirect_to(root_path, alert: "Empty field!") and return  
       else  
-        @course = params[:search].downcase 
-        @results = Course.all.where("lower(course_name) LIKE :search", search: "%#{@course}%")
-        #render :json => @results
-      end  
+        @parameter = params[:search]
+        @results = Course.all.where("lower(course_name) LIKE :search", search: "%#{@parameter}%")
+        redirect_to course_path(Course.find_by(course_name: @parameter))
+      end
     end
     
 end
