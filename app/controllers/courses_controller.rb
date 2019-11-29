@@ -27,13 +27,17 @@ class CoursesController < ApplicationController
     end
   
     def search
-      if params[:search].blank?  
-        redirect_to(root_path, alert: "Empty field!") and return  
-      else  
-        @parameter = params[:search]
-        @results = Course.all.where("lower(course_name) LIKE :search", search: "%#{@parameter}%")
-        redirect_to course_path(Course.find_by(course_name: @parameter))
-      end
+        if params[:search].blank?  
+            redirect_to(root_path, alert: "Empty field!") and return  
+        else
+            begin
+                @parameter = params[:search]
+                redirect_to course_path(Course.find_by(course_name: @parameter))
+            rescue ActionController::UrlGenerationError => e
+                print e
+                redirect_to(root_path, alert: "Invalid field!") and return
+            end
+        end
     end
     
 end
