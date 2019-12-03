@@ -1,5 +1,6 @@
 <h2>Listing courses</h2>
  <%= link_to 'Create new course', new_course_path %>
+ <b1>---if your course is not listed go ahead and add it. </b1>
 <table>
   <% @courses.each do |course| %>
     <tr>
@@ -8,4 +9,6 @@
       </td>
     </tr>
   <% end %>
-</table>
+  </table>
+  <b1></b1>
+<%= link_to 'Back to home page', root_path %>
