@@ -1,11 +1,19 @@
 <h2>Listing courses</h2>
 <table>
   <% @courses.each do |course| %>
-    <p>
-    <tr>
+  
+  <div class="container">
+      <div class="row">
+      <div class="col-6">
       <%= link_to course.course_name, course_path(course) %>
-    </tr>
-    </p>
+      </div>
+      <div class="col-3">
+      <%= link_to 'View', course_path(course) %>
+      <%= link_to 'Edit', edit_course_path(course) %>
+      <%= link_to 'Destroy', course_path(course), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+      </div>
+  </div>
   <% end %>
 </table>
 <br>

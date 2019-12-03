@@ -1,11 +1,18 @@
-<h2>Listing professors</h2>
+<h3>Listing professors</h3>
 <table>
   <% @professors.each do |professor| %>
-    <p>
-    <tr>
-      <%= link_to professor.prof_name, course_path(professor) %>
-    </tr>
-    </p>
+  <div class="container">
+      <div class="row">
+      <div class="col-4">
+      <%= link_to professor.prof_name, professor_path(professor) %>
+      </div>
+      <div class="col-3">
+      <%= link_to 'View', professor_path(professor) %>
+      <%= link_to 'Edit', edit_professor_path(professor) %>
+      <%= link_to 'Delete', professor_path(professor), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+      </div>
+  </div>
   <% end %>
 </table>
 
