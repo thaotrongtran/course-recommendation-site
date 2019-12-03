@@ -2,7 +2,7 @@ Feature: View all reviews
   
     As a student 
     So that I can access content from fellow students 
-    I want to be able to add a new review 
+    I want to be able to view all reviews
 
 Scenario: As a student I want to be able to view all reviews from the home page
   Given I am on the homepage
