@@ -25,6 +25,12 @@ class ProfessorsController < ApplicationController
     def show
         @professor = Professor.find(params[:id])
     end
+    
+    def destroy
+        @professor = Professor.find(params[:id])
+        @professor.destroy
+        redirect_to professors_path
+    end
   
 end
 
