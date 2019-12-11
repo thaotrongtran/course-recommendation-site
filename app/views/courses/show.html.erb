@@ -5,10 +5,10 @@
 <table>    
 <div class="container">
       <div class="row">
-          <div class="col-5">
+          <div class="col-4">
             <strong>Review</strong>
           </div>
-          <div class="col-1">
+          <div class="col-2">
             <strong>Professor</strong>
           </div>
           <div class="col-1">
@@ -31,10 +31,10 @@
         <% @course.reviews.each do |review| %>
     <div class="container">
       <div class="row">
-          <div class="col-5">
+          <div class="col-4">
             <%= review.evaluation %>
           </div>
-          <div class="col-1">
+          <div class="col-2">
             <%= Professor.find(review.professor_id).prof_name %>
           </div>
           <div class="col-1">
@@ -49,10 +49,11 @@
           
           <div class="col-2">
             <%= link_to 'Edit', edit_review_path(review) %>
-            <%= link_to 'Destroy', review_path(review), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Delete', review_path(review), method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
        </div>
     </div>
+    <br>
     <% end %>
 </table>  
 <p>
@@ -81,11 +82,11 @@
 
           </div>
          <div class="col-3">
-                <%= number_with_precision(@course.reviews.average(:support_rating), precision: 2) %>
+                <%= number_with_precision(@course.reviews.average(:workload_rating), precision: 2) %>
 
           </div>
           <div class="col-3">
-                <%= number_with_precision(@course.reviews.average(:workload_rating), precision: 2) %>
+                <%= number_with_precision(@course.reviews.average(:support_rating), precision: 2) %>
           </div>
     </div>
     </div>

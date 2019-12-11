@@ -2,7 +2,7 @@
 <table>
   <div class="container">
       <div class="row">
-          <div class="col-3">
+          <div class="col-4">
             <strong>Course</strong>
           </div>
           <div class="col-2">
@@ -26,7 +26,7 @@
   <% @reviews.each do |review| %>
     <div class="container">
       <div class="row">
-          <div class="col-3">
+          <div class="col-4">
           <%= link_to Course.find(review.course_id).course_name, course_path(Course.find(review.course_id)) %>
           </div>
           <div class="col-2">
@@ -55,5 +55,6 @@
   <% end %>
 </table>
 
-<%= link_to 'Create a new review', new_review_path %>
-
+<br>
+<br>
+<button type="button" class="btn btn-light"><%= link_to 'Create a new review', new_review_path %></button>
