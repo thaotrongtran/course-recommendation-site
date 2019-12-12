@@ -9,6 +9,10 @@ class ProfessorsController < ApplicationController
         @professor = Professor.new
     end 
     
+    def edit
+        @professor = Professor.find(params[:id])
+    end
+    
     #To create professor and save
     def create
         @professor = Professor.new(professor_params)

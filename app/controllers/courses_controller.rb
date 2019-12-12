@@ -4,6 +4,10 @@ class CoursesController < ApplicationController
         @courses = Course.all
     end
     
+    def edit
+        @course = Course.find(params[:id])
+    end
+    
     #Create new course
     def new
         @course = Course.new
